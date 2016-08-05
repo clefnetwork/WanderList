@@ -37,13 +37,7 @@ class DeepForm extends Component {
           </div>
         </div>
 
-<<<<<<< b7e4a207f7ca1489ceedd510205a308dfb557c29
         {!children.length && <div><label>Add some items to your list!</label></div>}
-=======
-
-        {!children.length && <div>Add some items to your list!</div>}
->>>>>>> [Component:refactor] Pulled out excess code from redux forms
-
         <div className="form-group">
           {/*
           <button className="btn btn-primary btn-sm" type="button" onClick={() => {
