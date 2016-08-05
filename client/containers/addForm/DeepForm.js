@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { reduxForm, addArrayValue } from 'redux-form'
+import { reduxForm, addArrayValue, getValues } from 'redux-form'
 import { Link } from 'react-router';
 import PureInput from './PureInput'
 import validate from './validateDeepForm'
@@ -14,6 +14,13 @@ export const fields = [
 ]
 
 class DeepForm extends Component {
+  
+  onSubmit(e){
+    console.log(e);
+  }
+
+
+
   render() {
     const {
       addValue,
@@ -24,7 +31,7 @@ class DeepForm extends Component {
     } = this.props
 
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(this.onSubmit)}>
         <div className="form-group">
             <legend>Create a new list!</legend>
           <div>
@@ -39,13 +46,6 @@ class DeepForm extends Component {
 
         {!children.length && <div><label>Add some items to your list!</label></div>}
         <div className="form-group">
-          {/*
-          <button className="btn btn-primary btn-sm" type="button" onClick={() => {
-            children.addField()    // pushes empty child field onto the end of the array
-          }}><i/> Add Item
-          </button>
-          */}
-
           <button className="btn btn-primary btn-sm" type="button" onClick={() => {
             for (let childIndex = 0; childIndex < 10; childIndex++) {
               addValue('deep', 'children')
