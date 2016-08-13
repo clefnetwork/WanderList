@@ -30,6 +30,7 @@ export default class navBar extends Component {
               <li><a href="#">My Drafts</a></li>
             </ul>
 
+
             <div className="nav navbar-nav navbar-right mainBtns">
               <li>
               <Link to="/lists/new">

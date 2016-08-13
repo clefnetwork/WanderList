@@ -62,6 +62,9 @@ export class Login extends Component {
         photo: userData.photoURL,
         userId: user.uid
       };
+
+
+
       Login.context.userAuth(userDataStorage);
       let logged = {logged: true};
       let userId = {userId: userDataStorage.userId}
