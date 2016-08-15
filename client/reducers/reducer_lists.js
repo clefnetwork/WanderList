@@ -19,6 +19,7 @@ export default function(state = INITIAL_STATE, action) {
     console.log("USERINFO", action.payload.data)
     return { ...state, info: action.payload.data, upvotedLists: action.payload.data.upvotedLists, downvotedLists: action.payload.data.downvotedLists };
   } else if(action.type === FETCH_LISTS) {
+    console.log("FETCHLISTS", action.payload);
     return {
       ...state, all: action.payload.data
     };

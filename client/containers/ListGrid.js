@@ -9,6 +9,7 @@ import {Panel} from 'react-bootstrap';
 import { Pagination } from 'react-bootstrap';
 
 export class ListGrid extends Component {
+
   componentWillMount() {
     this.state = {term: "", activePage: 1};
     if(localStorage.getItem('logged')) {
@@ -27,16 +28,22 @@ export class ListGrid extends Component {
   }
 
   render() {
+    console.log('content', this.props);
     return (
       <div>
         <NavBar />
+
         <div>
+
           <form>
-            <input type="text" className="form-control" placeholder="Search" onChange={event => this.onInputChange(event.target.value)} />
+              <input type="text" className="form-control" placeholder="Search" onChange={event => this.onInputChange(event.target.value)} />
           </form>
         </div>
-
         <Panel />
+
+
+
+
         <ul className="list-group">
           {this.props.lists.filter(list => list.title.match(new RegExp("\\b".concat(this.state.term), "gi"))).map((list, i) => <List {...this.props} info={this.props.info} votes={list.upvote - list.downvote} upLists={this.props.upLists} downLists={this.props.downLists} key={i} i={i} list={list} />)}
         </ul>

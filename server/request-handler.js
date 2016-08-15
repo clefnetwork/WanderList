@@ -34,37 +34,37 @@ module.exports = function(app) {
     //   if(err) throw err;
     //   res.send(docs);
     // });
-    let p = (req.body.type - 1) * 10;
-    console.log(p);
 
-    List
+      let p = (req.body.type - 1) * 10;
+      console.log(p);
+
+
+     List
     .find({})
     .sort({createdAt: 'asc'})
     .limit(10)
     .skip(p)
     .exec(function (err, posts) {
-      res.send(posts);
-    })
-    //  List.find({}, { skip: p, limit: 5 }, function(err, results) {
-    //    if(err) throw err;
-    //    res.send(results);
-    // });
+
+       res.send(posts);
+      })
+  
+
+
+
+
+     //  List.find({}, { skip: p, limit: 5 }, function(err, results) {
+     //    if(err) throw err;
+     //    res.send(results);
+     // });
   });
 
-  // app.get('/api/user', function(req, res) {
-  //   User.findOne({'userId': '6pYSzmFLhJVQAVkvo8xFXDcd8Pe2'}, function(err, user) {
-  //     if(err) throw err;
-  //     console.log("DOC", user);
-  //     res.send(user);
-  //   });
-  // });
 
-  app.get('/api/user/:uid', function(req, res) {
-    var uid = req.params.uid;
 
-    User.findOne({'userId': uid}, function(err, user) {
+
+  app.get('/api/user', function(req, res) {
+    User.findOne({'userId': 'IdsmlJL8EASGrdmZutK9P6HB2443'}, function(err, user) {
       if(err) throw err;
-      console.log("DOC", user);
       res.send(user);
     });
   });
