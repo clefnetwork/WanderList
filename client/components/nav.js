@@ -11,8 +11,7 @@ export default class navBar extends Component {
     super(props);
   }
 
-  render() {
-  const author = firebase.auth().currentUser ? firebase.auth().currentUser.displayName : null;
+  render(){
     return(
       <div>
         <nav className="navbar navbar-fixed-top">
